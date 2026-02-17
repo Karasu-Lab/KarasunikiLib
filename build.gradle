@@ -1,5 +1,6 @@
 plugins {
-    id 'fabric-loom'
+    id 'fabric-loom' version '1.11.5'
+    id 'java'
 }
 
 version = project.mod_version
@@ -7,6 +8,10 @@ group = project.maven_group
 
 base {
     archivesName = "karasunikilib"
+}
+
+java {
+    withSourcesJar()
 }
 
 loom {
