@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.3.4...v0.4.0) (2026-02-19)
+
+
+### Features
+
+* updated action ([11c0652](https://github.com/Karasu-Lab/KarasunikiLib/commit/11c06527f40677cf5e44fdf6a2fe1d1200b5a94d))
+
 ## [0.3.4](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.3.3...v0.3.4) (2026-02-19)
 
 
