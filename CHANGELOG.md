@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.3.0...v0.3.1) (2026-02-19)
+
+
+### Bug Fixes
+
+* fixed build error ([e470024](https://github.com/Karasu-Lab/KarasunikiLib/commit/e47002493b6b0e4271c115368a266e0e3903851b))
+
 ## [0.3.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.2.1...v0.3.0) (2026-02-19)
 
 
