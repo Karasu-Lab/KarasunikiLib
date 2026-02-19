@@ -1,6 +1,7 @@
 plugins {
     id 'fabric-loom' version '1.15-SNAPSHOT'
     id 'java'
+    id 'maven-publish'
 }
 
 version = project.mod_version
@@ -12,6 +13,14 @@ base {
 
 java {
     withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
 }
 
 loom {
