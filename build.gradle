@@ -1,14 +1,14 @@
 plugins {
     id 'fabric-loom' version '1.15-SNAPSHOT'
-    id 'java-library'
+    id 'java'
     id 'maven-publish'
 }
 
-version = project.mod_version
+version = "${project.mod_version}-${project.minecraft_version}"
 group = project.maven_group
 
 base {
-    archivesName = "KarasunikiLib"
+    archivesName = project.archives_base_name
 }
 
 java {
@@ -18,7 +18,7 @@ java {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId = "KarasunikiLib"
+            artifactId = "karasunikilib"
             from components.java
         }
     }
@@ -33,10 +33,6 @@ loom {
             sourceSet sourceSets.client
         }
     }
-}
-
-remapJar {
-    archiveFileName = "karasunikilib-${project.mod_version}-${project.minecraft_version}.jar"
 }
 
 dependencies {

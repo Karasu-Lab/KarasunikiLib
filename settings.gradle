@@ -12,4 +12,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "KarasunikiLib"
+rootProject.name = "karasunikilib"
