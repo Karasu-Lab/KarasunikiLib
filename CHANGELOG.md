@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.1.1...v0.2.0) (2026-02-19)
+
+
+### Features
+
+* updated gradle wrapper ([597c71e](https://github.com/Karasu-Lab/KarasunikiLib/commit/597c71e29ad1f048cbb12f025f1c440767f91886))
+
 ## [0.1.1](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.1.0...v0.1.1) (2026-02-19)
 
 
