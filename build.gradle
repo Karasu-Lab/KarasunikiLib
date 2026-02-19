@@ -18,7 +18,7 @@ java {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId = project.archives_base_name
+            artifactId = "KarasunikiLib"
             from components.java
         }
     }
@@ -33,6 +33,10 @@ loom {
             sourceSet sourceSets.client
         }
     }
+}
+
+remapJar {
+    archiveFileName = "${project.archives_base_name}-${project.mod_version}-${project.minecraft_version}.jar"
 }
 
 dependencies {
