@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.5.0...v0.5.1) (2026-02-19)
+
+
+### Bug Fixes
+
+* fixed mod version ([6377814](https://github.com/Karasu-Lab/KarasunikiLib/commit/6377814ff9c5748a69ee254c2412ba4bd13047c5))
+
 ## [0.5.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.4.0...v0.5.0) (2026-02-19)
 
 
