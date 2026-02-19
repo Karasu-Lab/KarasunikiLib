@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.1.0...v0.1.1) (2026-02-19)
+
+
+### Bug Fixes
+
+* added gradle config ([f0a74be](https://github.com/Karasu-Lab/KarasunikiLib/commit/f0a74bebfecb3b378c1c04e6e2bdf7c08d553a69))
+
 ## [0.1.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.0.1...v0.1.0) (2026-02-19)
 
 
