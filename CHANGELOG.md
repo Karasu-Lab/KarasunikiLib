@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.6.0...v0.7.0) (2026-02-19)
+
+
+### Features
+
+* added mod icon ([61a6f5e](https://github.com/Karasu-Lab/KarasunikiLib/commit/61a6f5ed3d10f1e52a89a5799bea2dfaa956d196))
+
 ## [0.6.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.5.1...v0.6.0) (2026-02-19)
 
 
