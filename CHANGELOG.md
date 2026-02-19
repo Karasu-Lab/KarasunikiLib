@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.4](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.3.3...v0.3.4) (2026-02-19)
+
+
+### Bug Fixes
+
+* fixed buildscript ([a692de4](https://github.com/Karasu-Lab/KarasunikiLib/commit/a692de47cebba055d2812b0bee08b422e07efecd))
+
 ## [0.3.3](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.3.2...v0.3.3) (2026-02-19)
 
 
