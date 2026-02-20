@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.7.0...v0.8.0) (2026-02-20)
+
+
+### Features
+
+* added base client widgets ([59f4cc3](https://github.com/Karasu-Lab/KarasunikiLib/commit/59f4cc3e659437a13a8fabdf99fce677d27cc65a))
+
 ## [0.7.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/v0.6.0...v0.7.0) (2026-02-19)
 
 
