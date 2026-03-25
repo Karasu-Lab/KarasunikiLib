@@ -19,12 +19,11 @@ dependencies {
 remapJar {
     input.set(shadowJar.archiveFile)
     dependsOn(shadowJar)
-    archiveClassifier = "fabric"
 }
 
 shadowJar {
     configurations = [project.configurations.shadowCommon]
-    archiveClassifier = "shadow"
+    archiveClassifier = "dev-shadow"
 }
 
 sourcesJar {
