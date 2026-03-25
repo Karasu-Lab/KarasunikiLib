@@ -17,6 +17,7 @@ dependencies {
 }
 
 remapJar {
+    enabled = false
     input.set(shadowJar.archiveFile)
     dependsOn(shadowJar)
 }

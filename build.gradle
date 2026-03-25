@@ -58,6 +58,10 @@ subprojects {
                 artifactId = base.archivesName.get()
                 version = project.version
                 from components.java
+
+                artifact(tasks.jar) {
+                    classifier = "dev"
+                }
             }
         }
     }
