@@ -1,46 +1,51 @@
 package com.karasu256.karasulab.karasucore.api.block.entity.impl;
 
+import com.karasu256.karasulab.karasucore.api.IHeldItem;
 import com.karasu256.karasulab.karasucore.api.block.ICableInputable;
 import com.karasu256.karasulab.karasucore.api.block.ICableOutputable;
 import com.karasu256.karasulab.karasucore.api.block.IEnergyBlock;
 import com.karasu256.karasulab.karasucore.api.data.ICapacity;
 import com.karasu256.karasulab.karasucore.api.data.IEnergy;
+import com.karasu256.karasulab.karasucore.api.data.impl.EnergyValue;
+import com.karasu256.karasulab.karasucore.api.data.impl.HeldItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public abstract class AbstractEnergyBlockEntity<T extends IEnergy> extends KarasuCoreBlockEntity
-        implements IEnergyBlock<T>, ICapacity, ICableInputable, ICableOutputable {
-    protected long energy;
+public abstract class AbstractEnergyBlockEntity<T extends IEnergy> extends KarasuCoreBlockEntity implements IEnergyBlock<T>, IHeldItem, ICableInputable, ICableOutputable, ICapacity {
+    protected final EnergyValue energy;
     protected final long capacity;
+    protected final HeldItem heldItem = new HeldItem();
 
-    public AbstractEnergyBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state, long capacity) {
-        super(type, pos, state);
+    public AbstractEnergyBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState, long capacity) {
+        super(blockEntityType, blockPos, blockState);
         this.capacity = capacity;
+        this.energy = new EnergyValue();
     }
 
     @Override
     public long insert(long maxAmount, boolean simulate) {
-        long received = Math.min(capacity - energy, maxAmount);
+        long energyReceived = Math.min(capacity - energy.getValue(), maxAmount);
         if (!simulate) {
-            energy += received;
+            energy.setValue(energy.getValue() + energyReceived);
             setChanged();
             sync();
         }
-        return received;
+        return energyReceived;
     }
 
     @Override
     public long extract(long maxAmount, boolean simulate) {
-        long extracted = Math.min(energy, maxAmount);
+        long energyExtracted = Math.min(energy.getValue(), maxAmount);
         if (!simulate) {
-            energy -= extracted;
+            energy.setValue(energy.getValue() - energyExtracted);
             setChanged();
             sync();
         }
-        return extracted;
+        return energyExtracted;
     }
 
     @Override
@@ -49,17 +54,40 @@ public abstract class AbstractEnergyBlockEntity<T extends IEnergy> extends Karas
     }
 
     @Override
+    public long getAmount() {
+        return energy.getValue();
+    }
+
+    @Override
+    public void setEnergy(long newValue) {
+        energy.setValue(newValue);
+        setChanged();
+        sync();
+    }
+
+    @Override
+    public ItemStack getHeldItem() {
+        return heldItem.getHeldItem();
+    }
+
+    @Override
+    public void setHeldItem(ItemStack stack) {
+        heldItem.setHeldItem(stack);
+        setChanged();
+        sync();
+    }
+
+    @Override
     protected void saveAdditional(CompoundTag nbt, HolderLookup.Provider registries) {
         super.saveAdditional(nbt, registries);
-        nbt.putLong(getEnergyType().getNbtId().toString(), energy);
+        energy.writeNbt(nbt, registries);
+        heldItem.writeNbt(nbt, registries);
     }
 
     @Override
     protected void loadAdditional(CompoundTag nbt, HolderLookup.Provider registries) {
         super.loadAdditional(nbt, registries);
-        String key = getEnergyType().getNbtId().toString();
-        if (nbt.contains(key)) {
-            energy = nbt.getLong(key);
-        }
+        energy.readNbt(nbt, registries);
+        heldItem.readNbt(nbt, registries);
     }
 }
