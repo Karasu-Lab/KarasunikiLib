@@ -54,15 +54,13 @@ subprojects {
     publishing {
         publications {
             maven(MavenPublication) {
-                groupId = project.group
                 artifactId = base.archivesName.get()
-                version = project.version
-                from components.java
-
-                artifact(tasks.jar) {
-                    classifier = "dev"
-                }
+                artifact tasks.remapJar
+                artifact tasks.sourcesJar
             }
+        }
+        repositories {
+            mavenLocal()
         }
     }
 }

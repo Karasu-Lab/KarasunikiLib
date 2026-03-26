@@ -47,18 +47,22 @@ dependencies {
 }
 
 processResources {
-    inputs.property 'version', project.version
+    inputs.property "version", project.version
 
-    filesMatching('META-INF/neoforge.mods.toml') {
-        expand version: project.version
+    filesMatching("META-INF/neoforge.mods.toml") {
+        expand "version": project.version
     }
 }
 
 shadowJar {
     configurations = [project.configurations.shadowBundle]
-    archiveClassifier = 'dev-shadow'
+    archiveClassifier = "dev-shadow"
+    from sourceSets.main.output
+    includeEmptyDirs = false
 }
 
 remapJar {
     input.set shadowJar.archiveFile
+    dependsOn shadowJar
+    archiveClassifier = null
 }

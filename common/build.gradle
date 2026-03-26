@@ -15,16 +15,6 @@ dependencies {
     modImplementation "dev.architectury:architectury:$architectury_api_version"
 }
 
-remapJar {
-    input.set(shadowJar.archiveFile)
-    dependsOn(shadowJar)
-}
-
-shadowJar {
-    configurations = [project.configurations.shadowCommon]
-    archiveClassifier = "dev-shadow"
-}
-
 sourcesJar {
     dependsOn classes
     archiveClassifier = "sources"

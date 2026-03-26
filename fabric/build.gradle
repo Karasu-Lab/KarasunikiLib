@@ -28,19 +28,21 @@ dependencies {
 
 shadowJar {
     configurations = [project.configurations.shadowCommon]
-    archiveClassifier = 'dev-shadow'
+    from sourceSets.main.output
+    archiveClassifier = "dev-shadow"
+    includeEmptyDirs = false
 }
 
 processResources {
-    inputs.property 'version', project.version
+    inputs.property "version", project.version
 
-    filesMatching('fabric.mod.json') {
-        expand version: project.version
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
     }
 }
 
 remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    archiveClassifier = ''
+    archiveClassifier = null
 }
