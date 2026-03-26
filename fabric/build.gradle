@@ -1,5 +1,5 @@
 plugins {
-    id 'com.github.johnrengelman.shadow'
+    id 'com.gradleup.shadow'
 }
 
 architectury {
@@ -22,8 +22,8 @@ dependencies {
 
     modImplementation "dev.architectury:architectury-fabric:$architectury_api_version"
 
-    common(project(path: ':core:common', configuration: 'namedElements')) { transitive false }
-    shadowCommon(project(path: ':core:common', configuration: 'transformProductionFabric')) { transitive false }
+    common(project(path: ':common', configuration: 'namedElements')) { transitive false }
+    shadowCommon(project(path: ':common', configuration: 'transformProductionFabric')) { transitive false }
 }
 
 shadowJar {
