@@ -10,8 +10,8 @@ architectury {
 }
 
 allprojects {
-    group = rootProject.maven_group
-    version = rootProject.mod_version
+    group = maven_group
+    version = mod_version
 }
 
 subprojects {
@@ -19,7 +19,7 @@ subprojects {
     apply plugin: 'architectury-plugin'
 
     base {
-        archivesName = "$rootProject.archives_name-$project.name"
+        archivesName = "$archives_name-$project.name"
     }
 
     loom {
@@ -33,7 +33,7 @@ subprojects {
     }
 
     dependencies {
-        minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
+        minecraft "net.minecraft:minecraft:$minecraft_version"
         mappings loom.officialMojangMappings()
     }
 
