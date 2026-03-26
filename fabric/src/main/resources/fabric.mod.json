@@ -15,10 +15,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.karasu256.karasulab.karasucore.fabric.KarasucoreFabric"
+      "com.karasu256.karasulab.karasucore.fabric.KarasuCoreFabric"
     ],
     "client": [
-      "com.karasu256.karasulab.karasucore.fabric.client.KarasucoreFabricClient"
+      "com.karasu256.karasulab.karasucore.fabric.client.KarasuCoreFabricClient"
     ]
   },
   "mixins": [
@@ -30,8 +30,5 @@
     "java": ">=21",
     "architectury": ">=13.0.8",
     "fabric-api": "*"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
