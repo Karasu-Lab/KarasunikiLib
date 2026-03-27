@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.11](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.1.10...KarasunikiLib-v1.1.11) (2026-03-27)
+
+
+### Bug Fixes
+
+* fixed maven central publish error ([37f5f42](https://github.com/Karasu-Lab/KarasuCore/commit/37f5f42dacde77e6caf5b4b63289d6e6a334b29a))
+
 ## [1.1.10](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.1.9...KarasunikiLib-v1.1.10) (2026-03-27)
 
 
