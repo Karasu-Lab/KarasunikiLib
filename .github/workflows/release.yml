@@ -49,7 +49,7 @@ jobs:
       - name: Build and Stage Production (Signed)
         run: |
           mkdir -p build/repo
-          ./gradlew publishAllPublicationsToLocalRepoRepository
+          ./gradlew publish
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
@@ -68,12 +68,14 @@ jobs:
 
       - name: Create Maven Central Bundle
         run: |
-          if [ -d "build/repo" ]; then
+          if [ -d "build/repo" ] && [ -n "$(ls -A build/repo)" ]; then
             cd build/repo
             zip -q -r ../bundle.zip .
             cd ../..
           else
-            echo "build/repo NOT FOUND"
+            echo "build/repo is missing or empty!"
+            # Try to find if it was created in a subproject accidentally
+            find . -name "repo" -type d
             exit 1
           fi
 

@@ -17,6 +17,17 @@ architectury {
 allprojects {
     group = maven_group
     version = releaseVersion ?: "${baseVersion}-SNAPSHOT"
+
+    apply plugin: 'maven-publish'
+    publishing {
+        repositories {
+            maven {
+                name = "LocalRepo"
+                url = "file://${rootProject.projectDir}/build/repo"
+            }
+            mavenLocal()
+        }
+    }
 }
 
 subprojects {
@@ -81,13 +92,6 @@ subprojects {
                     }
                 }
             }
-        }
-        repositories {
-            maven {
-                name = "LocalRepo"
-                url = "file://${rootProject.projectDir}/build/repo"
-            }
-            mavenLocal()
         }
     }
 
