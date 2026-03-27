@@ -59,11 +59,11 @@ jobs:
           cd ../..
 
       - name: Publish to Maven Central
-        uses: central-repository/publish-action@v1
-        with:
-          zip-path: build/bundle.zip
-          token: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
-          deployment-name: KarasunikiLib-${{ needs.release-please.outputs.version }}
+        run: |
+          curl --request POST \
+            --header "Authorization: Bearer ${{ secrets.MAVEN_CENTRAL_TOKEN }}" \
+            --form bundle=@build/bundle.zip \
+            "https://central.sonatype.com/api/v1/publisher/upload?publishingType=AUTOMATIC"
 
       - name: Build Development Assets (Unsigned -dev)
         run: ./gradlew assemble sourcesJar
