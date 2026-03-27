@@ -6,6 +6,7 @@
 ### Features
 
 * added icon ([319637e](https://github.com/Karasu-Lab/KarasuCore/commit/319637eaf73166ffc1c6f53be83322271e316917))
+* moved icons ([1c524c0](https://github.com/Karasu-Lab/KarasuCore/commit/1c524c0082ca046f4d2522959a7549f997ea2014))
 
 ## [1.0.7](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.6...KarasunikiLib-v1.0.7) (2026-03-27)
 
