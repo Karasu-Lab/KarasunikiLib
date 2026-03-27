@@ -22,7 +22,7 @@ tasks.register('publishAllToMavenLocal') {
 
 allprojects {
     group = maven_group
-    version = releaseVersion ?: (isCI ? "${baseVersion}-SNAPSHOT" : "${baseVersion}-dev-SNAPSHOT")
+    version = releaseVersion ?: "${baseVersion}-SNAPSHOT"
 }
 
 subprojects {
