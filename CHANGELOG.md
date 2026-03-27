@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.1...KarasunikiLib-v1.0.2) (2026-03-27)
+
+
+### Bug Fixes
+
+* fixed permission error ([ad77270](https://github.com/Karasu-Lab/KarasuCore/commit/ad772703fc65caae03d7794eedc6e22f6b44a84c))
+
 ## [1.0.1](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.0...KarasunikiLib-v1.0.1) (2026-03-27)
 
 
