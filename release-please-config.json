@@ -4,7 +4,8 @@
             "release-type": "simple",
             "package-name": "KarasunikiLib",
             "extra-files": [
-                "version.txt"
+                "version.txt",
+                "gradle.properties"
             ]
         }
     },

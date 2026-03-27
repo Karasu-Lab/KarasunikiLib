@@ -7,16 +7,22 @@ plugins {
 }
 
 def releaseVersion = System.getenv("RELEASE_VERSION")
-def versionFile = file('version.txt')
-def baseVersion = versionFile.exists() ? versionFile.text.trim() : (project.hasProperty('mod_version') ? mod_version : "0.0.1")
+def isCI = System.getenv("GITHUB_ACTIONS") != null || releaseVersion != null
+def baseVersion = project.mod_version.replace("-SNAPSHOT", "")
 
 architectury {
     minecraft = minecraft_version
 }
 
+tasks.register('publishAllToMavenLocal') {
+    subprojects.each { subproject ->
+        dependsOn subproject.tasks.matching { it.name == 'publishToMavenLocal' }
+    }
+}
+
 allprojects {
     group = maven_group
-    version = releaseVersion ?: "${baseVersion}-SNAPSHOT"
+    version = releaseVersion ?: (isCI ? "${baseVersion}-SNAPSHOT" : "${baseVersion}-dev-SNAPSHOT")
 }
 
 subprojects {
@@ -26,8 +32,7 @@ subprojects {
     apply plugin: 'signing'
 
     base {
-        def suffix = releaseVersion ? "" : "-dev"
-        archivesName = "${archives_name}-${project.name}${suffix}"
+        archivesName = project.name
     }
 
     loom {
@@ -45,6 +50,14 @@ subprojects {
 
     tasks.withType(JavaCompile).configureEach {
         it.options.release = 21
+    }
+
+    tasks.withType(Jar).configureEach {
+        manifest {
+            attributes([
+                "Fabric-Mapping-Namespace": "official"
+            ])
+        }
     }
 
     dependencies {

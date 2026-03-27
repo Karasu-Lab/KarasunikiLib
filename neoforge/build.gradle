@@ -42,8 +42,8 @@ dependencies {
 
     modImplementation "dev.architectury:architectury-neoforge:$architectury_api_version"
 
-    common(project(path: ':common', configuration: 'namedElements')) { transitive false }
-    shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
+    common(project(path: ':karasunikilib-common', configuration: 'namedElements')) { transitive false }
+    shadowBundle project(path: ':karasunikilib-common', configuration: 'transformProductionNeoForge')
 }
 
 processResources {
@@ -60,8 +60,7 @@ processResources {
 shadowJar {
     configurations = [project.configurations.shadowBundle]
     archiveClassifier = "dev-shadow"
-    from sourceSets.main.output
-    includeEmptyDirs = false
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 remapJar {

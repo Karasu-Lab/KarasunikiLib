@@ -22,14 +22,15 @@ dependencies {
 
     modImplementation "dev.architectury:architectury-fabric:$architectury_api_version"
 
-    common(project(path: ':common', configuration: 'namedElements')) { transitive false }
-    shadowCommon(project(path: ':common', configuration: 'transformProductionFabric')) { transitive false }
+    common(project(path: ':karasunikilib-common', configuration: 'namedElements')) { transitive false }
+    shadowCommon(project(path: ':karasunikilib-common', configuration: 'transformProductionFabric')) { transitive false }
 }
 
 shadowJar {
     configurations = [project.configurations.shadowCommon]
     from sourceSets.main.output
     archiveClassifier = "dev-shadow"
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     includeEmptyDirs = false
 }
 

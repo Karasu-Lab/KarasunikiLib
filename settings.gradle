@@ -10,6 +10,9 @@ pluginManagement {
 
 rootProject.name = 'KarasunikiLib'
 
-include 'common'
-include 'fabric'
-include 'neoforge'
+include 'karasunikilib-common'
+project(':karasunikilib-common').projectDir = file('common')
+include 'karasunikilib-fabric'
+project(':karasunikilib-fabric').projectDir = file('fabric')
+include 'karasunikilib-neoforge'
+project(':karasunikilib-neoforge').projectDir = file('neoforge')
