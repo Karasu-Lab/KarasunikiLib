@@ -1,0 +1,3 @@
+[submodule "modules/KarasuLabModReleaser"]
+	path = modules/KarasuLabModReleaser
+	url = https://github.com/Karasu-Lab/Karasu-Lab-Mod-Releaser.git
