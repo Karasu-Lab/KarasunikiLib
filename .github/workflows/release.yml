@@ -21,7 +21,6 @@ jobs:
         uses: googleapis/release-please-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          command: manifest
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
 
@@ -50,7 +49,7 @@ jobs:
           GPG_KEY_ID: ${{ vars.GPG_KEY_ID }}
 
       - name: KarasuLab Mod Releaser
-        uses: Karasu-Lab/Karasu-Lab-Mod-Releaser@v2.2.0
+        uses: Karasu-Lab/Karasu-Lab-Mod-Releaser@v2.2.1
         with:
           modrinth_project_id: ${{ vars.MODRINTH_PROJECT_ID }}
           modrinth_token: ${{ secrets.MODRINTH_TOKEN }}
