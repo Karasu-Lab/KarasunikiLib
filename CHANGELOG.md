@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.1.18...KarasunikiLib-v1.2.0) (2026-03-27)
+
+
+### Features
+
+* added afterEvaluate config ([19596f9](https://github.com/Karasu-Lab/KarasuCore/commit/19596f9d15a680ae620fe1d5799527b761c75a74))
+* simplified id uses ([17dfdc7](https://github.com/Karasu-Lab/KarasuCore/commit/17dfdc78714e33062623ece0c8176d39e1d20aae))
+
+
+### Bug Fixes
+
+* fixed build pipeline ([ccff2ea](https://github.com/Karasu-Lab/KarasuCore/commit/ccff2ea8964cd41a3c7decb091c8fe49fd295474))
+* fixed registry error ([71234e2](https://github.com/Karasu-Lab/KarasuCore/commit/71234e26def1e401a877e1bc47885c045196cec7))
+
 ## [1.1.18](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.1.17...KarasunikiLib-v1.1.18) (2026-03-27)
 
 
