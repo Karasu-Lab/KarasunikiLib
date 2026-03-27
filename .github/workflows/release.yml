@@ -46,7 +46,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build and Stage Production (Signed)
-        run: ./gradlew publish
+        run: ./gradlew publishMavenPublicationToLocalRepoRepository
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
@@ -65,6 +65,7 @@ jobs:
 
       - name: Create Maven Central Bundle
         run: |
+          ls -R build
           cd build/repo
           zip -r ../bundle.zip .
           cd ../..
