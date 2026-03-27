@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.4...KarasunikiLib-v1.0.5) (2026-03-27)
+
+
+### Bug Fixes
+
+* fixed signing error ([a8aa9ab](https://github.com/Karasu-Lab/KarasuCore/commit/a8aa9ab3ebf3c5578d9c252dfc8eab6db3906b4f))
+
 ## [1.0.4](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.3...KarasunikiLib-v1.0.4) (2026-03-27)
 
 
