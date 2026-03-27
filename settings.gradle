@@ -8,7 +8,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'karasunikilib'
+rootProject.name = 'KarasunikiLib'
 
 include 'common'
 include 'fabric'
