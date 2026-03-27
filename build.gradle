@@ -91,9 +91,10 @@ subprojects {
     }
 
     signing {
-        def signingKey = System.getenv("GPG_PRIVATE_KEY")
-        def signingPassword = System.getenv("GPG_PASSPHRASE")
-        def signingKeyId = System.getenv("GPG_KEY_ID")
+        def signingKey = System.getenv("GPG_PRIVATE_KEY")?.trim()
+        def signingPassword = System.getenv("GPG_PASSPHRASE")?.trim()
+        def signingKeyId = System.getenv("GPG_KEY_ID")?.trim()
+
         if (signingKey && signingPassword && releaseVersion) {
             if (signingKeyId) {
                 useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
