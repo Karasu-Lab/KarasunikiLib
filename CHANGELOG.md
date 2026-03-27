@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.13](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.1.12...KarasunikiLib-v1.1.13) (2026-03-27)
+
+
+### Bug Fixes
+
+* fixed release error ([1030be0](https://github.com/Karasu-Lab/KarasuCore/commit/1030be0181b9ce925d1f51df0b1a4c667fcf6a7d))
+
 ## [1.1.12](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.1.11...KarasunikiLib-v1.1.12) (2026-03-27)
 
 
