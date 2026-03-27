@@ -74,8 +74,6 @@ jobs:
             cd ../..
           else
             echo "build/repo is missing or empty!"
-            # Try to find if it was created in a subproject accidentally
-            find . -name "repo" -type d
             exit 1
           fi
 
