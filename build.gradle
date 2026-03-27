@@ -52,19 +52,6 @@ subprojects {
         it.options.release = 21
     }
 
-    afterEvaluate {
-        tasks.withType(Jar).configureEach {
-            archiveClassifier = ""
-            if (it.name == "jar") {
-                destinationDirectory = layout.buildDirectory.dir("unmapped")
-            } else if (it.name == "shadowJar") {
-                destinationDirectory = layout.buildDirectory.dir("shadow")
-            } else if (it.name == "remapJar") {
-                destinationDirectory = layout.buildDirectory.dir("libs")
-            }
-        }
-    }
-
     tasks.withType(Jar).configureEach {
         manifest {
             attributes([
