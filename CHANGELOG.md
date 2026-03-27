@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.7...KarasunikiLib-v1.1.0) (2026-03-27)
+
+
+### Features
+
+* added icon ([319637e](https://github.com/Karasu-Lab/KarasuCore/commit/319637eaf73166ffc1c6f53be83322271e316917))
+
 ## [1.0.7](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.6...KarasunikiLib-v1.0.7) (2026-03-27)
 
 
