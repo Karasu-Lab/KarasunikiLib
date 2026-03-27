@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "karasucore",
+  "id": "karasunikilib",
   "version": "${version}",
-  "name": "KarasuCore",
-  "description": "A core mod",
+  "name": "Karasunikilib",
+  "description": "Library mod for Hashibutogarasu",
   "authors": [
     "Hashibutogarasu"
   ],
@@ -15,14 +15,14 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.karasu256.karasulab.karasucore.fabric.KarasuCoreFabric"
+      "net.karasuniki.karasunikilib.fabric.client.KarasunikiLibFabric"
     ],
     "client": [
-      "com.karasu256.karasulab.karasucore.fabric.client.KarasuCoreFabricClient"
+      "net.karasuniki.karasunikilib.fabric.KarasunikiLibFabricClient"
     ]
   },
   "mixins": [
-    "karasucore.mixins.json"
+    "karasunikilib.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.18.4",

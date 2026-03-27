@@ -4,30 +4,30 @@ loaderVersion = "[2,)"
 license = "MIT"
 
 [[mods]]
-modId = "karasucore"
+modId = "karasunikilib"
 version = "${version}"
-displayName = "KarasuCore"
+displayName = "KarasunikiLib"
 authors = "Hashibutogarasu"
 description = '''
-A core mod
+Library mod for Hashibutogarasu
 '''
 #logoFile = ""
 
-[[dependencies.karasucore]]
+[[dependencies.karasunikilib]]
 modId = "neoforge"
 type = "required"
 versionRange = "[21,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.karasucore]]
+[[dependencies.karasunikilib]]
 modId = "minecraft"
 type = "required"
 versionRange = "[1.21.1,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.karasucore]]
+[[dependencies.karasunikilib]]
 modId = "architectury"
 type = "required"
 versionRange = "[13.0.8,)"
@@ -35,4 +35,4 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[mixins]]
-config = "karasucore.mixins.json"
+config = "karasunikilib.mixins.json"
