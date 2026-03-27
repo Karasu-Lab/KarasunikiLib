@@ -52,6 +52,13 @@ subprojects {
         it.options.release = 21
     }
 
+    afterEvaluate {
+        tasks.named("jar") {
+            archiveClassifier = ""
+            destinationDirectory = layout.buildDirectory.dir("libs")
+        }
+    }
+
     tasks.withType(Jar).configureEach {
         manifest {
             attributes([
