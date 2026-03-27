@@ -1,0 +1,22 @@
+{
+    "java": 21,
+    "loaders": [
+        "fabric",
+        "neoforge"
+    ],
+    "release_title_format": "{archives_base_name} {mod_version} for MC {minecraft_version}",
+    "dependencies": {
+        "net.fabricmc.fabric-api:fabric-api": {
+            "name": "fabric-api",
+            "type": "required",
+            "modrinth": "P7dR8mSH",
+            "curseforge": "306612"
+        },
+        "dev.architectury:architectury": {
+            "name": "architectury-api",
+            "type": "required",
+            "modrinth": "lhGA9TYQ",
+            "curseforge": "419699"
+        }
+    }
+}

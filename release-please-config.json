@@ -1,0 +1,13 @@
+{
+    "packages": {
+        ".": {
+            "release-type": "simple",
+            "package-name": "KarasunikiLib",
+            "extra-files": [
+                "gradle.properties",
+                "version.txt"
+            ]
+        }
+    },
+    "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}

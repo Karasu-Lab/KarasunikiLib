@@ -5,21 +5,28 @@ plugins {
     id 'java-library'
 }
 
+def releaseVersion = System.getenv("RELEASE_VERSION")
+def versionFile = file('version.txt')
+def baseVersion = versionFile.exists() ? versionFile.text.trim() : (project.hasProperty('mod_version') ? mod_version : "0.0.1")
+
 architectury {
     minecraft = minecraft_version
 }
 
 allprojects {
     group = maven_group
-    version = mod_version
+    version = releaseVersion ?: "${baseVersion}-SNAPSHOT"
 }
 
 subprojects {
     apply plugin: 'dev.architectury.loom'
     apply plugin: 'architectury-plugin'
+    apply plugin: 'maven-publish'
+    apply plugin: 'signing'
 
     base {
-        archivesName = "$archives_name-$project.name"
+        def suffix = releaseVersion ? "" : "-dev"
+        archivesName = "${archives_name}-${project.name}${suffix}"
     }
 
     loom {
@@ -28,18 +35,8 @@ subprojects {
         }
     }
 
-    repositories {
-
-    }
-
-    dependencies {
-        minecraft "net.minecraft:minecraft:$minecraft_version"
-        mappings loom.officialMojangMappings()
-    }
-
     java {
         withSourcesJar()
-
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
     }
@@ -47,20 +44,58 @@ subprojects {
     tasks.withType(JavaCompile).configureEach {
         it.options.release = 21
     }
-}
 
-subprojects {
-    apply plugin: 'maven-publish'
+    dependencies {
+        minecraft "net.minecraft:minecraft:$minecraft_version"
+        mappings loom.officialMojangMappings()
+    }
+
     publishing {
         publications {
             maven(MavenPublication) {
                 artifactId = base.archivesName.get()
                 artifact tasks.remapJar
                 artifact tasks.sourcesJar
+
+                pom {
+                    name = "KarasunikiLib"
+                    description = "Library mod for ProjectK"
+                    url = "https://github.com/Karasu-Lab/ProjectK"
+                    licenses {
+                        license {
+                            name = "MIT License"
+                            url = "https://opensource.org/licenses/MIT"
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = "hashibutogarasu"
+                            name = "Hashibutogarasu"
+                        }
+                    }
+                    scm {
+                        connection = "scm:git:git://github.com/Karasu-Lab/ProjectK.git"
+                        developerConnection = "scm:git:ssh://github.com/Karasu-Lab/ProjectK.git"
+                        url = "https://github.com/Karasu-Lab/ProjectK"
+                    }
+                }
             }
         }
         repositories {
+            maven {
+                name = "LocalRepo"
+                url = layout.buildDirectory.dir("repo")
+            }
             mavenLocal()
+        }
+    }
+
+    signing {
+        def signingKey = System.getenv("GPG_PRIVATE_KEY")
+        def signingPassword = System.getenv("GPG_PASSPHRASE")
+        if (signingKey && signingPassword && releaseVersion) {
+            useInMemoryPgpKeys(signingKey, signingPassword)
+            sign publishing.publications.maven
         }
     }
 }
