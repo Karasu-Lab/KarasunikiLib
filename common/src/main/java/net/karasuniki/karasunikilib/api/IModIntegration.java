@@ -13,14 +13,14 @@ public interface IModIntegration {
         }
     }
 
+    static <T extends IModIntegration> void bootstrap(@NotNull ModIntegrationSupplier<T> supplier) {
+        IModIntegration.bootstrap(supplier.isModLoaded(), () -> supplier.get().bootstrap());
+    }
+
     void bootstrap();
 
     @SuppressWarnings("unused")
     boolean isModLoaded();
 
     String getModId();
-
-    static <T extends IModIntegration> void bootstrap(@NotNull ModIntegrationSupplier<T> supplier) {
-        IModIntegration.bootstrap(supplier.isModLoaded(), () -> supplier.get().bootstrap());
-    }
 }
