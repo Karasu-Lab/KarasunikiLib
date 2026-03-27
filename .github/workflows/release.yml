@@ -28,8 +28,13 @@ jobs:
     needs: release-please
     if: ${{ needs.release-please.outputs.release_created }}
     runs-on: ubuntu-latest
+    env:
+      RELEASE_VERSION: ${{ needs.release-please.outputs.version }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
@@ -43,13 +48,12 @@ jobs:
       - name: Build and Stage Production (Signed)
         run: ./gradlew publish
         env:
-          RELEASE_VERSION: ${{ needs.release-please.outputs.version }}
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           GPG_KEY_ID: ${{ vars.GPG_KEY_ID }}
 
       - name: KarasuLab Mod Releaser
-        uses: Karasu-Lab/Karasu-Lab-Mod-Releaser@v2.2.1
+        uses: Karasu-Lab/Karasu-Lab-Mod-Releaser@v2.2.2
         with:
           modrinth_project_id: ${{ vars.MODRINTH_PROJECT_ID }}
           modrinth_token: ${{ secrets.MODRINTH_TOKEN }}
