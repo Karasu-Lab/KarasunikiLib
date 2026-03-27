@@ -93,8 +93,13 @@ subprojects {
     signing {
         def signingKey = System.getenv("GPG_PRIVATE_KEY")
         def signingPassword = System.getenv("GPG_PASSPHRASE")
+        def signingKeyId = System.getenv("GPG_KEY_ID")
         if (signingKey && signingPassword && releaseVersion) {
-            useInMemoryPgpKeys(signingKey, signingPassword)
+            if (signingKeyId) {
+                useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+            } else {
+                useInMemoryPgpKeys(signingKey, signingPassword)
+            }
             sign publishing.publications.maven
         }
     }
