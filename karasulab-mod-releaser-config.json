@@ -5,6 +5,7 @@
         "neoforge"
     ],
     "release_title_format": "{archives_base_name} {mod_version} for MC {minecraft_version}",
+    "jar_name_format": "{archives_base_name}-{loader}-{mod_version}.jar",
     "dependencies": {
         "net.fabricmc.fabric-api:fabric-api": {
             "name": "fabric-api",
