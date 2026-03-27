@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.6...KarasunikiLib-v1.0.7) (2026-03-27)
+
+
+### Bug Fixes
+
+* fixed signing config ([fa61eb4](https://github.com/Karasu-Lab/KarasuCore/commit/fa61eb4d0ba2e8702883c800139991991b6e6e06))
+
 ## [1.0.6](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.5...KarasunikiLib-v1.0.6) (2026-03-27)
 
 
