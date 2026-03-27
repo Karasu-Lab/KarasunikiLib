@@ -47,7 +47,9 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build and Stage Production (Signed)
-        run: ./gradlew publishAllPublicationsToLocalRepoRepository
+        run: |
+          mkdir -p build/repo
+          ./gradlew publishAllPublicationsToLocalRepoRepository
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
@@ -66,10 +68,15 @@ jobs:
 
       - name: Create Maven Central Bundle
         run: |
-          ls -R build
-          cd build/repo
-          zip -r ../bundle.zip .
-          cd ../..
+          ls -R
+          if [ -d "build/repo" ]; then
+            cd build/repo
+            zip -r ../bundle.zip .
+            cd ../..
+          else
+            echo "build/repo NOT FOUND"
+            exit 1
+          fi
 
       - name: Publish to Maven Central
         run: |
