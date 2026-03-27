@@ -11,7 +11,7 @@
     "homepage": ""
   },
   "license": "MIT",
-  "icon": "assets/karasucore/icon.png",
+  "icon": "assets/karasunikilib/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
