@@ -68,10 +68,9 @@ jobs:
 
       - name: Create Maven Central Bundle
         run: |
-          ls -R
           if [ -d "build/repo" ]; then
             cd build/repo
-            zip -r ../bundle.zip .
+            zip -q -r ../bundle.zip .
             cd ../..
           else
             echo "build/repo NOT FOUND"

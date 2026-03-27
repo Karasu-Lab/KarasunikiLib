@@ -3,6 +3,7 @@ plugins {
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.gradleup.shadow' version '8.3.6' apply false
     id 'java-library'
+    id 'maven-publish'
 }
 
 def releaseVersion = System.getenv("RELEASE_VERSION")
@@ -84,7 +85,7 @@ subprojects {
         repositories {
             maven {
                 name = "LocalRepo"
-                url = rootProject.file("build/repo")
+                url = "file://${rootProject.projectDir}/build/repo"
             }
             mavenLocal()
         }
