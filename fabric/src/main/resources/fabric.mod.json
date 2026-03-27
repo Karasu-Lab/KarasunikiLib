@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "icon": "assets/karasunikilib/icon.png",
-  "environment": "*",
+  "environment": "${environment}",
   "entrypoints": {
     "main": [
       "net.karasuniki.karasunikilib.fabric.client.KarasunikiLibFabric"

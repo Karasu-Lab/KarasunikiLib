@@ -11,6 +11,8 @@ authors = "Hashibutogarasu"
 description = '''
 Library mod for Hashibutogarasu
 '''
+clientSideOnly = "${client_only}"
+serverSideOnly = "${server_only}"
 #logoFile = ""
 
 [[dependencies.karasunikilib]]

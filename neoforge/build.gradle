@@ -50,7 +50,10 @@ processResources {
     inputs.property "version", project.version
 
     filesMatching("META-INF/neoforge.mods.toml") {
-        expand "version": project.version
+        def modEnv = (project.findProperty("mod_environment") ?: "both").toLowerCase()
+        expand "version": project.version, 
+               "client_only": (modEnv == "client"),
+               "server_only": (modEnv == "server")
     }
 }
 
