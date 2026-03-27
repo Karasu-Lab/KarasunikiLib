@@ -47,7 +47,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build and Stage Production (Signed)
-        run: ./gradlew publish
+        run: ./gradlew publishAllPublicationsToLocalRepoRepository
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}

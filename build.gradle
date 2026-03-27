@@ -84,7 +84,7 @@ subprojects {
         repositories {
             maven {
                 name = "LocalRepo"
-                url = "${rootProject.buildDir}/repo"
+                url = "${rootProject.layout.buildDirectory.get().asFile}/repo"
             }
             mavenLocal()
         }
