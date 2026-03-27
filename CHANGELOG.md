@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.17](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.1.16...KarasunikiLib-v1.1.17) (2026-03-27)
+
+
+### Bug Fixes
+
+* added withJavadocJar ([3095575](https://github.com/Karasu-Lab/KarasuCore/commit/30955758ddad013da11faf979bb2d128002d18c4))
+
 ## [1.1.16](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.1.15...KarasunikiLib-v1.1.16) (2026-03-27)
 
 
