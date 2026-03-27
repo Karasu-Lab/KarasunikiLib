@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.2...KarasunikiLib-v1.0.3) (2026-03-27)
+
+
+### Bug Fixes
+
+* fixed ci build error ([3c69787](https://github.com/Karasu-Lab/KarasuCore/commit/3c69787944807039aa9279c89612c656e220b38d))
+
 ## [1.0.2](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.0.1...KarasunikiLib-v1.0.2) (2026-03-27)
 
 
