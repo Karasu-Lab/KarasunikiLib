@@ -15,10 +15,10 @@
   "environment": "${environment}",
   "entrypoints": {
     "main": [
-      "net.karasuniki.karasunikilib.fabric.client.KarasunikiLibFabric"
+      "net.karasuniki.karasunikilib.fabric.KarasunikiLibFabric"
     ],
     "client": [
-      "net.karasuniki.karasunikilib.fabric.KarasunikiLibFabricClient"
+      "net.karasuniki.karasunikilib.fabric.client.KarasunikiLibFabricClient"
     ]
   },
   "mixins": [

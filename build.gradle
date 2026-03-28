@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 plugins {
     id 'dev.architectury.loom' version '1.13-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
@@ -7,7 +9,6 @@ plugins {
 }
 
 def releaseVersion = System.getenv("RELEASE_VERSION")
-def isCI = System.getenv("GITHUB_ACTIONS") != null || releaseVersion != null
 def baseVersion = project.mod_version.replace("-SNAPSHOT", "")
 
 architectury {
