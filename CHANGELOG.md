@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.2.1...KarasunikiLib-v1.3.0) (2026-03-29)
+
+
+### Features
+
+* added energy registry ([461f1f2](https://github.com/Karasu-Lab/KarasuCore/commit/461f1f21fa7512c427e9687c50cd62cd82f56610))
+* added energy registry ([d56d14c](https://github.com/Karasu-Lab/KarasuCore/commit/d56d14c2344b3a29b77bc2e4cff19b5044adb09d))
+
 ## [1.2.1](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.2.0...KarasunikiLib-v1.2.1) (2026-03-27)
 
 
