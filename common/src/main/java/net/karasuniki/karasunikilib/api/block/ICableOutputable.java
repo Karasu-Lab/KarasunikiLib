@@ -1,5 +1,7 @@
 package net.karasuniki.karasunikilib.api.block;
 
+import net.minecraft.resources.ResourceLocation;
+
 public interface ICableOutputable {
-    long extract(long maxAmount, boolean simulate);
+    long extract(ResourceLocation id, long maxAmount, boolean simulate);
 }

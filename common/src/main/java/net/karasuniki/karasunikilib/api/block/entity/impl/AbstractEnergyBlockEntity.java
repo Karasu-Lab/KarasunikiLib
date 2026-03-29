@@ -11,13 +11,14 @@ import net.karasuniki.karasunikilib.api.data.impl.HeldItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public abstract class AbstractEnergyBlockEntity<T extends IEnergy> extends KarasuCoreBlockEntity implements IEnergyBlock<T>, IHeldItem, ICableInputable, ICableOutputable, ICapacity {
-    protected final EnergyValue energy;
-    protected final long capacity;
+    protected EnergyValue energy;
+    protected long capacity;
     protected final HeldItem heldItem = new HeldItem();
 
     public AbstractEnergyBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState, long capacity) {
@@ -27,9 +28,15 @@ public abstract class AbstractEnergyBlockEntity<T extends IEnergy> extends Karas
     }
 
     @Override
-    public long insert(long maxAmount, boolean simulate) {
+    public long insert(ResourceLocation id, long maxAmount, boolean simulate) {
+        if (getAmount() > 0 && !energy.getId().equals(id)) {
+            return 0;
+        }
         long energyReceived = Math.min(capacity - energy.getValue(), maxAmount);
         if (!simulate) {
+            if (getAmount() == 0) {
+                energy.setId(id);
+            }
             energy.setValue(energy.getValue() + energyReceived);
             setChanged();
             sync();
@@ -38,7 +45,10 @@ public abstract class AbstractEnergyBlockEntity<T extends IEnergy> extends Karas
     }
 
     @Override
-    public long extract(long maxAmount, boolean simulate) {
+    public long extract(ResourceLocation id, long maxAmount, boolean simulate) {
+        if (!energy.getId().equals(id)) {
+            return 0;
+        }
         long energyExtracted = Math.min(energy.getValue(), maxAmount);
         if (!simulate) {
             energy.setValue(energy.getValue() - energyExtracted);
@@ -79,6 +89,7 @@ public abstract class AbstractEnergyBlockEntity<T extends IEnergy> extends Karas
 
     @Override
     protected void saveAdditional(CompoundTag nbt, HolderLookup.Provider registries) {
+        energy.setCapacity(this.capacity);
         super.saveAdditional(nbt, registries);
         energy.writeNbt(nbt, registries);
         heldItem.writeNbt(nbt, registries);
@@ -88,6 +99,7 @@ public abstract class AbstractEnergyBlockEntity<T extends IEnergy> extends Karas
     protected void loadAdditional(CompoundTag nbt, HolderLookup.Provider registries) {
         super.loadAdditional(nbt, registries);
         energy.readNbt(nbt, registries);
+        this.capacity = energy.getCapacity();
         heldItem.readNbt(nbt, registries);
     }
 }

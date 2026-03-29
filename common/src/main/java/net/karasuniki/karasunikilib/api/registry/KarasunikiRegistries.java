@@ -10,7 +10,10 @@ import net.minecraft.resources.ResourceKey;
 public class KarasunikiRegistries {
     public static final ResourceKey<Registry<IEnergy>> ENERGY_REGISTRY_KEY = ResourceKey.createRegistryKey(Id.id("energy"));
 
-    public static void init() {
+    static {
         RegistrarManager.get(KarasunikiLib.MOD_ID).builder(ENERGY_REGISTRY_KEY.location()).build();
+    }
+
+    public static void init() {
     }
 }
