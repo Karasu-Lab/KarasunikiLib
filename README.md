@@ -1,6 +1,6 @@
 # KarasunikiLib
 
-KarasunikiLib is a lightweight utility library mod for the Fabric Loader, designed to streamline common development tasks for Karasu Lab's mods.
+KarasunikiLib is a lightweight utility library mod for Fabric and NeoForge, designed to streamline common development tasks for Karasu Lab's mods.
 
 ## Dependencies 🔧 
 This mod requires Architectury API!
@@ -16,7 +16,7 @@ This mod is migrating to new system. The old Interfaces will move to new package
 This is a library mod and does not provide direct in-game features for players. To use it in your mod development:
 
 1. Add KarasunikiLib as a dependency in your `build.gradle` file.
-2. Utilize the provided APIs under the `net.karasuniki.karasunikilib` package.
+2. Utilize the provided APIs under the `com.karasu256.karasunikilib` package.
 3. For help with specific interfaces, refer to the source code or integrated Javadocs.
 
 ## Contribution
