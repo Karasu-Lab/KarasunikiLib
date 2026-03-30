@@ -1,5 +1,6 @@
 package net.karasuniki.karasunikilib.processor;
 
+import net.karasuniki.karasunikilib.api.client.registry.KClientRegistry;
 import net.karasuniki.karasunikilib.api.registry.KRegistry;
 import net.karasuniki.karasunikilib.api.registry.KRegistryInitializer;
 
@@ -19,19 +20,22 @@ import java.util.Set;
 
 @SupportedAnnotationTypes({
         "net.karasuniki.karasunikilib.api.registry.KRegistry",
-        "net.karasuniki.karasunikilib.api.registry.KRegistryInitializer"
+        "net.karasuniki.karasunikilib.api.registry.KRegistryInitializer",
+        "net.karasuniki.karasunikilib.api.client.registry.KClientRegistry"
 })
 @SupportedSourceVersion(SourceVersion.RELEASE_21)
 public class KRegistryProcessor extends AbstractProcessor {
 
     private final Set<String> registryTargets = new HashSet<>();
     private final Set<String> initializerTargets = new HashSet<>();
+    private final Set<String> clientTargets = new HashSet<>();
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         if (roundEnv.processingOver()) {
             writeServicesFile("net.karasuniki.karasunikilib.api.registry.IKRegistryTarget", registryTargets);
             writeServicesFile("net.karasuniki.karasunikilib.api.registry.IKRegistryInitializerTarget", initializerTargets);
+            writeServicesFile("net.karasuniki.karasunikilib.api.client.registry.IKClientRegistryTarget", clientTargets);
             return false;
         }
 
@@ -44,6 +48,12 @@ public class KRegistryProcessor extends AbstractProcessor {
         for (Element element : roundEnv.getElementsAnnotatedWith(KRegistryInitializer.class)) {
             if (element instanceof TypeElement typeElement) {
                 initializerTargets.add(typeElement.getQualifiedName().toString());
+            }
+        }
+
+        for (Element element : roundEnv.getElementsAnnotatedWith(KClientRegistry.class)) {
+            if (element instanceof TypeElement typeElement) {
+                clientTargets.add(typeElement.getQualifiedName().toString());
             }
         }
 
