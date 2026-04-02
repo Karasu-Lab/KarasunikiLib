@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/KarasunikiLib-v1.3.0...KarasunikiLib-v1.4.0) (2026-04-02)
+
+
+### Features
+
+* added default methods ([28c009c](https://github.com/Karasu-Lab/KarasunikiLib/commit/28c009c2855a8e12becd06a34bfc1ffaca6a0c9d))
+* added registry loader service and annotations ([86bffa8](https://github.com/Karasu-Lab/KarasunikiLib/commit/86bffa833dd89f93617241e587321af76b7503c8))
+
 ## [1.3.0](https://github.com/Karasu-Lab/KarasuCore/compare/KarasunikiLib-v1.2.1...KarasunikiLib-v1.3.0) (2026-03-29)
 
 
