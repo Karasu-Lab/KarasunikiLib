@@ -11,7 +11,7 @@ public abstract class KarasuCoreBlockEntity extends BlockEntity implements IBloc
         super(blockEntityType, blockPos, blockState);
     }
 
-    protected void sync() {
+    public void sync() {
         if (level != null && !level.isClientSide) {
             level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), getChannel());
         }
