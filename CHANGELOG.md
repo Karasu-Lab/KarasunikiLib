@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/Karasu-Lab/KarasunikiLib/compare/KarasunikiLib-v1.4.0...KarasunikiLib-v1.4.1) (2026-04-06)
+
+
+### Bug Fixes
+
+* made sync function to public ([a9eaed7](https://github.com/Karasu-Lab/KarasunikiLib/commit/a9eaed73ba494f95f08f9558d3be8b4723f2e752))
+
 ## [1.4.0](https://github.com/Karasu-Lab/KarasunikiLib/compare/KarasunikiLib-v1.3.0...KarasunikiLib-v1.4.0) (2026-04-02)
 
 
