@@ -1,23 +1,35 @@
 {
-    "java": 21,
-    "loaders": [
-        "fabric",
-        "neoforge"
-    ],
-    "release_title_format": "{archives_base_name} {mod_version} for MC {minecraft_version}",
-    "jar_name_format": "{archives_base_name}-{loader}-{mod_version}.jar",
-    "dependencies": {
-        "net.fabricmc.fabric-api:fabric-api": {
-            "name": "fabric-api",
-            "type": "required",
-            "modrinth": "P7dR8mSH",
-            "curseforge": "306612"
-        },
-        "dev.architectury:architectury": {
-            "name": "architectury-api",
-            "type": "required",
-            "modrinth": "lhGA9TYQ",
-            "curseforge": "419699"
-        }
-    }
+  "loaders": ["fabric", "neoforge"],
+  "game_versions": ["1.21.1"],
+  "environment": {
+    "client": "required",
+    "server": "required"
+  },
+  "modrinth": {
+    "project_id": "DFR1YkHk",
+    "relations": [
+      {
+        "project_id": "P7dR8mSH",
+        "type": "required"
+      },
+      {
+        "project_id": "lhGA9TYQ",
+        "type": "required"
+      }
+    ]
+  },
+  "curseforge": {
+    "project_id": "1466401",
+    "relations": [
+      {
+        "slug": "fabric-api",
+        "type": "required"
+      },
+      {
+        "slug": "architectury-api",
+        "type": "required"
+      }
+    ]
+  },
+  "release_type": "release"
 }
