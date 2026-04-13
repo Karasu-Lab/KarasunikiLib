@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/Karasu-Lab/KarasunikiLib/compare/KarasunikiLib-v1.4.2...KarasunikiLib-v1.4.3) (2026-04-13)
+
+
+### Bug Fixes
+
+* fixed action version ([7b24be6](https://github.com/Karasu-Lab/KarasunikiLib/commit/7b24be688e7b11cfcd316bca6973d71c18fe3024))
+
 ## [1.4.2](https://github.com/Karasu-Lab/KarasunikiLib/compare/KarasunikiLib-v1.4.1...KarasunikiLib-v1.4.2) (2026-04-13)
 
 
