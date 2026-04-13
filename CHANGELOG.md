@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.5](https://github.com/Karasu-Lab/KarasunikiLib/compare/KarasunikiLib-v1.4.4...KarasunikiLib-v1.4.5) (2026-04-13)
+
+
+### Bug Fixes
+
+* fixed release error ([39e569e](https://github.com/Karasu-Lab/KarasunikiLib/commit/39e569eaf3d23a4a290d7b629413e437aba85a74))
+
 ## [1.4.4](https://github.com/Karasu-Lab/KarasunikiLib/compare/KarasunikiLib-v1.4.3...KarasunikiLib-v1.4.4) (2026-04-13)
 
 
